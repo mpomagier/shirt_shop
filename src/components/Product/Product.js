@@ -7,6 +7,8 @@ import Button from "../Button/Button";
 const Product = ({ title, basePrice, colors, sizes, id, name }) => {
   const [currentColor, setCurrentColor] = useState(colors[0]);
   const [currentSize, setCurrentSize] = useState(sizes[0].name);
+  const getPrice =
+    basePrice + sizes.find((size) => size.name === currentSize).additionalPrice;
   return (
     <article className={styles.product}>
       <div className={styles.imageContainer}>
@@ -19,7 +21,7 @@ const Product = ({ title, basePrice, colors, sizes, id, name }) => {
       <div>
         <header>
           <h2 className={styles.name}>{title}</h2>
-          <span className={styles.price}>Price: {basePrice}$</span>
+          <span className={styles.price}>Price: {getPrice}$</span>
         </header>
         <form>
           <div className={styles.sizes}>
