@@ -1,8 +1,9 @@
+// Product.js
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./Product.module.scss";
-import ProductImage from "./ProductImage";
-import ProductForm from "./Form/ProductForm";
+import ProductImage from "../Products/ProductImage";
+import ProductForm from "../Products/Form/ProductForm";
 
 const Product = ({ title, basePrice, colors, sizes, id, name }) => {
   const [currentColor, setCurrentColor] = useState(colors[0]);
